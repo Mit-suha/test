@@ -1,10 +1,23 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: echo 'init script' # runs during prebuild
-  - init: 'pip install -r requirements.txt'
+  - name: terminal 1
+    before: echo 'before'
+    init: |
+          echo 'init script' # runs during prebuild
+          'pip install -r requirements.txt'
 
-    command: python work1.py
+    command: |
+            python work1.py
              echo 'ssss'
+
+  - name: terminal 2
+    before: echo 'beforelllll'
+    init: |
+          echo 'kkkkkllll'
+
+    command: |
+             echo 'kkkkk'
+             pip list
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
